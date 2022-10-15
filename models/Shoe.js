@@ -7,36 +7,36 @@ const ShoeSchema = new mongoose.Schema({
     },
     brand: {
         type: String,
-        required: true
+        required: false
     },
     stability: {
         type: String,
-        required: true
+        required: false
     },
     cushion: {
         type: String,
-        required: true
+        required: false
     },
     mUrl: {
         type: String,
-        required: true
+        required: false
     },
     wUrl: {
         type: String,
-        required: true
+        required: false
     },
     mImg: {
         type: String,
-        required: true
+        required: false
     },
     wImg: {
         type: String,
-        required: true
+        required: false
     },
     description: {
         type: String,
-        required: true
+        required: false
     }
 })
 
-module.exports = mongoose.model('Model', modelSchema)
+module.exports = mongoose.model('Shoe', ShoeSchema)

@@ -1,0 +1,42 @@
+<%- include('partials/header') -%>
+
+    <main>
+        <h1>Shoe List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Shoe</th>
+                    <th>Stability</th>
+                    <th>Cushion</th>
+                    <th colspan="2"><a href="/shoes/create">+</a></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% shoes.forEach( el=> { %>
+                    <tr>
+                        <td>
+                            <%= el.brand %>
+                                <%= el.brand %>
+                        </td>
+                        <td>
+                            <%= el.stability %>
+                        </td>
+                        <td>
+                            <%= el.cushion %>
+                        </td>
+                        <td>
+                            <a href="/shoes/<%= el._id %>">Edit</a>
+                        </td>
+                        <td>
+                            <form action="/shoes/delete/<%= el._id %>?_method=DELETE" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% })%>
+            </tbody>
+        </table>
+    </main>
+
+    <%- include('partials/footer') -%>

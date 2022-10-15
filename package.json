@@ -19,5 +19,13 @@
     "mongoose": "^6.6.5",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Point2RunningCo/shoe-finder-v2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Point2RunningCo/shoe-finder-v2/issues"
+  },
+  "homepage": "https://github.com/Point2RunningCo/shoe-finder-v2#readme"
 }

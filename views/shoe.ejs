@@ -1,0 +1,50 @@
+<%- include('partials/header') -%>
+
+    <h1>Edit Shoe</h1>
+    <form action="/shoes/edit/<%= shoe._id %>?_method=PUT" method="POST" autocomplete="off">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required value="<%= shoe.name %>">
+
+        <label for="brand">Brand:</label>
+        <input type="text" name="brand" required value="<%= shoe.brand %>">
+
+        <p>Stability:</p>
+        <input type="radio" name="stability" value="Neutral" id="neutral" class="radioBtn">
+        <label for="neutral">Neutral</label>
+
+        <input type="radio" name="stability" value="Stability" id="stability" class="radioBtn">
+        <label for="stability">Stability</label>
+
+        <input type="radio" name="stability" value="Motion Control" id="motionControl" class="radioBtn">
+        <label for="motionControl">Motion Control</label>
+
+        <p>Cushion:</p>
+
+        <input type="radio" name="cushion" value="Light & Responsive" id="lightCushion" class="radioBtn">
+        <label for="lightCushion">Light & Responsive</label>
+
+        <input type="radio" name="cushion" value="Medium Cushion" id="medCushion" class="radioBtn">
+        <label for="medCushion">Medium Cushion</label>
+
+        <input type="radio" name="cushion" value="Max Cushion" id="maxCushion" class="radioBtn">
+        <label for="maxCushion">Max Cushion</label>
+
+        <label for="mUrl">Men's URL:</label>
+        <input type="url" name="mUrl" required value="<%= shoe.mUrl %>">
+
+        <label for="wUrl">Women's mUrl:</label>
+        <input type="url" name="wUrl" required value="<%= shoe.wUrl %>">
+
+        <label for="mImg">Men's Image:</label>
+        <input type="text" name="mImg" required value="<%= shoe.mImg %>">
+
+        <label for="wImg">Women's Image:</label>
+        <input type="text" name="wImg" required value="<%= shoe.wImg %>">
+
+        <label for="description">Description:</label>
+        <input type="textarea" name="description" required value="<%= shoe.description %>">
+
+        <input class="btn" type="submit">
+    </form>
+
+    <%- include('partials/footer') -%>

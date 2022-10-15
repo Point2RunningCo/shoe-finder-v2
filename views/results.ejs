@@ -1,0 +1,17 @@
+<%- include('partials/header') -%>
+
+    <section id="results">
+        <h2>You need a {{}} shoe!</h2>
+        <% shoes.forEach( el=> { %>
+            <section>
+                <h4>
+                    <%= el.brand %>
+                        <%= el.name %>
+                </h4>
+                <img src="<%= el.mImg %>" alt="<%= el.brand %> <%= el.name %>">
+                <a href="<%= el.mUrl %>" target="_blank" rel="noopener noreferrer">Shop Now</a>
+            </section>
+            <% }) %>
+    </section>
+
+    <%- include('partials/footer') -%>
