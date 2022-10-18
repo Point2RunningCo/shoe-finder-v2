@@ -1,7 +1,473 @@
 <%- include('partials/header') -%>
 
     <h1>Shoe Finder v2</h1>
-    <a href="/shoes/create">Create Shoe</a>
-    <a href="/shoes">Shoe List</a>
 
+    <section id="shoeUse" class="mainContainer">
+        <section class="question">
+            <h2>What will you be using your shoes for?</h2>
+            <section class="answers">
+                <button id="running" type="button" value="running">
+                    <img src="images/answerPics/running.png" alt="">
+                    <p>Running</p>
+                </button>
+                <button id="walking" type="button" value="walking">
+                    <img src="images/answerPics/walking.png" alt="">
+                    <p>Walking</p>
+                </button>
+                <button id="everyday" type="button" value="everyday">
+                    <img src="images/answerPics/everyday.png" alt="">
+                    <p>Everyday</p>
+                </button>
+            </section>
+        </section>
+    </section>
+
+    <section id="mileage" class="hidden mainContainer">
+        <section class="question">
+            <h2>How many miles a week do you run/walk?</h2>
+            <img id="distanceImage" src="images/answerPics/distance.png" alt="">
+            <section class="answers distanceBttns">
+                <button id="underTen" type="button" value="underTen">0-10 Miles</button>
+                <button id="tenToTwenty" type="button" value="tenToTwenty">
+                    <img src="images/answerPics/" alt="">10-20 Miles</button>
+                <button id="moreThanThirty" type="button" value="moreThanThirty">
+                    <img src="images/answerPics/" alt="">30+ Miles</button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section id="races" class="hidden mainContainer">
+        <section class="question">
+            <h2>Any upcoming races?</h2>
+            <section class="answers">
+                <input id="fiveK" type="checkbox" name="fiveK" value="fiveK">
+                <label for="fiveK" class="checkboxChild">5K</label>
+                <input id="tenK" type="checkbox" name="tenK" value="tenK">
+                <label for="tenK" class="checkboxChild">10K</label>
+                <input id="halfMarathon" type="checkbox" name="halfMarathon" value="halfMarathon">
+                <label for="halfMarathon" class="checkboxChild">Half Marathon</label>
+                <input id="marathon" type="checkbox" name="marathon" value="marathon">
+                <label for="marathon" class="checkboxChild">Marathon</label>
+                <input id="noRace" type="checkbox" name="noRace" value="noRace">
+                <label for="noRace" class="checkboxChild">No races planned</label>
+                <button id="raceSubmit" type="button" name="button">Next</button>
+            </section>
+        </section>
+    </section> -->
+
+    <section id="arch" class="hidden mainContainer">
+        <section class="question">
+            <h2>What arch type do you have?</h2>
+            <p>Select the image that best matches your arch.</p>
+            <a href="#" id="archUnsure">Not Sure?</a>
+            <section id="archUnsureCont" class="hidden moreInfo">
+                <h3>Determining your foot arch</h3>
+                <p>Dip your foot in water and then step on a piece of cardboard and examine the print that remains.</p>
+            </section>
+            <section class="answers">
+                <button id="flatArch" type="button" value="flatArch">
+                    <img src="images/answerPics/flatArch.png" alt="">
+                    <p>Flat</p>
+                </button>
+                <button id="normArch" type="button" value="normArch">
+                    <img src="images/answerPics/mediumArch.png" alt="">
+                    <p>Medium</p>
+                </button>
+                <button id="highArch" type="button" value="highArch">
+                    <img src="images/answerPics/highArch.png" alt="">
+                    <p>High</p>
+                </button>
+            </section>
+        </section>
+    </section>
+
+    <section id="legs" class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your leg shape?</h2>
+            <p>Stand with your feet and ankles together. Select the image that matches your leg shape.</p>
+            <section class="answers">
+                <button id="knockKnee" type="button" value="knockKnee">
+                    <img src="images/answerPics/knockKnees.png" alt="">
+                    <p>Knock Knees</p>
+                </button>
+                <button id="straightLegs" type="button" value="straightLegs">
+                    <img src="images/answerPics/straightLegs.png" alt="">
+                    <p>Straight</p>
+                </button>
+                <button id="bow" type="button" value="bow">
+                    <img src="images/answerPics/bowLegs.png" alt="">
+                    <p>Bow Legs</p>
+                </button>
+            </section>
+        </section>
+    </section>
+
+    <section id="kneeTrack" class="hidden mainContainer">
+        <section class="question">
+            <h2>How do your knees move in a shallow squat?</h2>
+            <p>Without shoes on perform a few shallow single-leg squats with each leg. Select the image that best matches how your knees move in a squat.</p>
+            <section class="answers">
+                <button id="rotateOut" type="button" value="rotateOut">
+                    <img src="images/answerPics/rotateOut.png" alt="">
+                    <p>Knees Rotate Outward</p>
+                </button>
+                <button id="straight" type="button" value="straight">
+                    <img src="images/answerPics/straightBend.png" alt="">
+                    <p>Knees Remain Straight</p>
+                </button>
+                <button id="rotateIn" type="button" value="rotateIn">
+                    <img src="images/answerPics/rotateIn.png" alt="">
+                    <p>Knees Rotate Inward</p>
+                </button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section id="injury" class="hidden mainContainer">
+        <section class="question">
+            <h2>Do you have any aches or pains?</h2>
+            <section class="answers">
+                <input id="back" type="checkbox" name="back" value="back">
+                <label for="back">Back</label>
+                <input id="hips" type="checkbox" name="hips" value="hips">
+                <label for="hips">Hips</label>
+                <input id="knees" type="checkbox" name="knees" value="knees">
+                <label for="knees">Knees</label>
+                <input id="calves" type="checkbox" name="calves" value="calves">
+                <label for="calves">Calves</label>
+                <input id="shins" type="checkbox" name="shins" value="shins">
+                <label for="shins">Shins</label>
+                <input id="achilles" type="checkbox" name="achilles" value="achilles">
+                <label for="achilles">Achilles/Ankle</label>
+                <input id="feet" type="checkbox" name="feet" value="feet">
+                <label for="feet">Feet</label>
+                <input id="bunions" type="checkbox" name="bunions" value="bunions">
+                <label for="bunions">Bunions</label>
+                <input id="plantar" type="checkbox" name="plantar" value="plantar">
+                <label for="plantar">Plantar Fasciitis</label>
+                <input id="noInjury" type="checkbox" name="noInjury" value="noInjury">
+                <label for="noInjury">So far, so good!</label>
+                <button id="injurySubmit" type="button" name="button">Next</button>
+            </section>
+        </section>
+    </section> -->
+
+    <section id="cushion" class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your preferred cushion level?</h2>
+            <section class="answers">
+                <button id="lightFast" type="button" value="lightFast">
+                    <img src="images/answerPics/lightCushion.png" alt="">
+                    <p>Light & Fast</p>
+                </button>
+                <button id="midCushion" type="button" value="midCushion">
+                    <img src="images/answerPics/mediumCushion.png" alt="">
+                    <p>Medium Cushion</p>
+                </button>
+                <button id="maxCushion" type="button" value="maxCushion">
+                    <img src="images/answerPics/maxCushion.png" alt="">
+                    <p>Max Cushion</p>
+                </button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section id="brand" class="hidden mainContainer">
+        <section class="question">
+            <h2>What brands do you like?</h2>
+            <section class="answers">
+                <input id="altra" type="checkbox" name="altra" value="altra">
+                <label for="altra">Altra</label>
+                <input id="asics" type="checkbox" name="asics" value="asics">
+                <label for="asics">Asics</label>
+                <input id="brooks" type="checkbox" name="brooks" value="brooks">
+                <label for="brooks">Brooks</label>
+                <input id="hoka" type="checkbox" name="hoka" value="hoka">
+                <label for="hoka">HOKA One One</label>
+                <input id="mizuno" type="checkbox" name="mizuno" value="mizuno">
+                <label for="mizuno">Mizuno</label>
+                <input id="newBalance" type="checkbox" name="newBalance" value="newBalance">
+                <label for="newBalance">New Balance</label>
+                <input id="nike" type="checkbox" name="nike" value="nike">
+                <label for="nike">Nike</label>
+                <input id="onRunning" type="checkbox" name="onRunning" value="onRunning">
+                <label for="onRunning">ON</label>
+                <input id="saucony" type="checkbox" name="saucony" value="saucony">
+                <label for="saucony">Saucony</label>
+                <input id="notPicky" type="checkbox" name="notPicky" value="notPicky">
+                <label for="notPicky">Show me everything!</label>
+                <button id="brandSubmit" type="button" name="button">Next</button>
+            </section>
+        </section>
+    </section> -->
+
+    <section id="gender" class="hidden mainContainer">
+        <section class="question">
+            <h2>Are you looking for Women's or Men's shoes?</h2>
+            <section class="answers">
+                <button id="womensShoes" type="button" value="womensShoes">
+                    <img src="images/answerPics/womens.png" alt="">
+                    <p>Women's Shoes</p>
+                </button>
+                <button id="mensShoes" type="button" value="mensShoes">
+                    <img src="images/answerPics/mens.png" alt="">
+                    <p>Men's Shoes</p>
+                </button>
+            </section>
+        </section>
+    </section>
+
+    <!-- <section class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your shoe size?</h2>
+            <select name="womensSize" id="womensShoeSize">
+                <option value="5">5</option>
+                <option value="5.5">5.5</option>
+                <option value="6">6</option>
+                <option value="6.5">6.5</option>
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option selected="selected" value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+            </select>
+        </section>
+    </section>
+    <section class="hidden mainContainer">
+        <section class="question">
+            <h2>What is your shoe size?</h2>
+            <select name="mensSize" id="mensShoeSize">
+                <option value="7">7</option>
+                <option value="7.5">7.5</option>
+                <option value="8">8</option>
+                <option value="8.5">8.5</option>
+                <option value="9">9</option>
+                <option value="9.5">9.5</option>
+                <option selected="selected" value="10">10</option>
+                <option value="10.5">10.5</option>
+                <option value="11">11</option>
+                <option value="11.5">11.5</option>
+                <option value="12">12</option>
+                <option value="12.5">12.5</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+            </select>
+        </section>
+    </section> -->
+
+    <section id="results" class="hidden">
+        <section id="resultContainer">
+            <section id="displayContainer">
+                <h2 id="displayResult"></h2>
+                <p>Here are some great options that fit your needs!</p>
+                <a href="#" id="shoeCatInfo">What does this mean?</a>
+                <section id="shoeCatInfoCont" class="hidden moreInfo">
+                    <h3>What does this mean?</h3>
+                    <p>Neutral shoes do not have any stabilizing features. They allow the foot to move and flex without any guidance. Stability shoes are designed to help offset over pronation, or the inward rolling of a person's foot after impact with the
+                        ground.
+                    </p>
+                </section>
+            </section>
+
+            <!-- Men's Shoes -->
+
+            <!-- Men's Light Cushion Nuetral -->
+
+
+            <% neutralLight.forEach( el=> { %>
+                <section class="mNeutralLight shoeBlock hidden">
+                    <a href="<%= el.mUrl %>" target="_blank">
+                        <h4>
+                            <%= el.name %>
+                        </h4>
+                        <img src="<%= el.mImg %>" alt="">
+                        <a class="shopBttn" target="_blank" href="<%= el.mUrl %>">Shop Now</a>
+                    </a>
+                </section>
+                <% }) %>
+
+
+
+                    <!-- Men's Medium Cushion Nuetral -->
+
+                    <% neutralMid.forEach( el=> { %>
+                        <section class="mNeutralMid shoeBlock hidden">
+                            <a href="<%= el.mUrl %>" target="_blank">
+                                <h4>
+                                    <%= el.name %>
+                                </h4>
+                                <img src="<%= el.mImg %>" alt="">
+                                <a class="shopBttn" target="_blank" href="<%= el.mUrl %>">Shop Now</a>
+                            </a>
+                        </section>
+                        <% }) %>
+
+
+                            <!-- Men's Max Cushion Nuetral -->
+
+
+                            <% neutralMax.forEach( el=> { %>
+                                <section class="mNeutralMax shoeBlock hidden">
+                                    <a href="<%= el.mUrl %>" target="_blank">
+                                        <h4>
+                                            <%= el.name %>
+                                        </h4>
+                                        <img src="<%= el.mImg %>" alt="">
+                                        <a class="shopBttn" target="_blank" href="<%= el.mUrl %>">Shop Now</a>
+                                    </a>
+                                </section>
+                                <% }) %>
+
+
+                                    <!-- Men's Light Cushion Stability -->
+
+                                    <% stabilityLight.forEach( el=> { %>
+                                        <section class="mStabilityLight shoeBlock hidden">
+
+                                            <a href="<%= el.mUrl %>" target="_blank">
+                                                <h4>
+                                                    <%= el.name %>
+                                                </h4>
+                                                <img src="<%= el.mImg %>" alt="">
+                                                <a class="shopBttn" target="_blank" href="<%= el.mUrl %>">Shop Now</a>
+                                            </a>
+                                        </section>
+                                        <% }) %>
+
+
+                                            <!-- Men's Medium Cushion Stability -->
+
+                                            <% stabilityMid.forEach( el=> { %>
+                                                <section class="mStabilityMid shoeBlock hidden">
+
+                                                    <a href="<%= el.mUrl %>" target="_blank">
+                                                        <h4>
+                                                            <%= el.name %>
+                                                        </h4>
+                                                        <img src="<%= el.mImg %>" alt="">
+                                                        <a class="shopBttn" target="_blank" href="<%= el.mUrl %>">Shop Now</a>
+                                                    </a>
+                                                </section>
+                                                <% }) %>
+
+
+                                                    <!-- Men's Max Cushion Stability -->
+
+                                                    <% stabilityMax.forEach( el=> { %>
+                                                        <section class="mStabilityMax shoeBlock hidden">
+
+                                                            <a href="<%= el.mUrl %>" target="_blank">
+                                                                <h4>
+                                                                    <%= el.name %>
+                                                                </h4>
+                                                                <img src="<%= el.mImg %>" alt="">
+                                                                <a class="shopBttn" target="_blank" href="<%= el.mUrl %>">Shop Now</a>
+                                                            </a>
+                                                        </section>
+                                                        <% }) %>
+
+
+                                                            <!-- Women's Shoes -->
+
+                                                            <!-- Women's Light Cushion Nuetral -->
+                                                            <% neutralLight.forEach( el=> { %>
+                                                                <section class="wNeutralLight shoeBlock hidden">
+
+                                                                    <a href="<%= el.wUrl %>" target="_blank">
+                                                                        <h4>
+                                                                            <%= el.name %>
+                                                                        </h4>
+                                                                        <img src="<%= el.wImg %>" alt="">
+                                                                        <a class="shopBttn" target="_blank" href="<%= el.wUrl %>">Shop Now</a>
+                                                                    </a>
+
+                                                                </section>
+                                                                <% }) %>
+                                                                    <!-- Women's Medium Cushion Nuetral -->
+
+
+                                                                    <% neutralMid.forEach( el=> { %>
+                                                                        <section class="wNeutralMid shoeBlock hidden">
+                                                                            <a href="<%= el.wUrl %>" target="_blank">
+                                                                                <h4>
+                                                                                    <%= el.name %>
+                                                                                </h4>
+                                                                                <img src="<%= el.wImg %>" alt="">
+                                                                                <a class="shopBttn" target="_blank" href="<%= el.wUrl %>">Shop Now</a>
+                                                                            </a>
+                                                                        </section>
+                                                                        <% }) %>
+
+
+                                                                            <!-- Women's Max Cushion Nuetral -->
+                                                                            <% neutralMax.forEach( el=> { %>
+                                                                                <section class="wNeutralMax shoeBlock hidden">
+
+                                                                                    <a href="<%= el.wUrl %>" target="_blank">
+                                                                                        <h4>
+                                                                                            <%= el.name %>
+                                                                                        </h4>
+                                                                                        <img src="<%= el.wImg %>" alt="">
+                                                                                        <a class="shopBttn" target="_blank" href="<%= el.wUrl %>">Shop Now</a>
+                                                                                    </a>
+                                                                                </section>
+                                                                                <% }) %>
+
+
+                                                                                    <!-- Women's Light Cushion Stability -->
+
+                                                                                    <% stabilityLight.forEach( el=> { %>
+                                                                                        <section class="wStabilityLight shoeBlock hidden">
+
+                                                                                            <a href="<%= el.wUrl %>" target="_blank">
+                                                                                                <h4>
+                                                                                                    <%= el.name %>
+                                                                                                </h4>
+                                                                                                <img src="<%= el.wImg %>" alt="">
+                                                                                                <a class="shopBttn" target="_blank" href="<%= el.wUrl %>">Shop Now</a>
+                                                                                            </a>
+                                                                                        </section>
+                                                                                        <% }) %>
+
+
+                                                                                            <!-- Women's Medium Cushion Stability -->
+
+
+                                                                                            <% stabilityMid.forEach( el=> { %>
+                                                                                                <section class="wStabilityMid shoeBlock hidden">
+                                                                                                    <a href="<%= el.wUrl %>" target="_blank">
+                                                                                                        <h4>
+                                                                                                            <%= el.name %>
+                                                                                                        </h4>
+                                                                                                        <img src="<%= el.wImg %>" alt="">
+                                                                                                        <a class="shopBttn" target="_blank" href="<%= el.wUrl %>">Shop Now</a>
+                                                                                                    </a>
+                                                                                                </section>
+                                                                                                <% }) %>
+                                                                                                    <!-- Women's Max Cushion Stability -->
+
+
+                                                                                                    <% stabilityMax.forEach( el=> { %>
+                                                                                                        <section class="wStabilityMax shoeBlock hidden">
+                                                                                                            <a href="<%= el.wUrl %>" target="_blank">
+                                                                                                                <h4>
+                                                                                                                    <%= el.name %>
+                                                                                                                </h4>
+                                                                                                                <img src="<%= el.wImg %>" alt="">
+                                                                                                                <a class="shopBttn" target="_blank" href="<%= el.wUrl %>">Shop Now</a>
+                                                                                                            </a>
+                                                                                                        </section>
+                                                                                                        <% }) %>
+
+        </section>
+    </section>
+    <button id="restartBttn" type="submit" onClick="refreshPage()">Restart</button>
     <%- include('partials/footer') -%>

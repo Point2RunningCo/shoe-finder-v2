@@ -7,8 +7,8 @@ const methodOverride = require('method-override')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
-const resultRoutes = require('./routes/result')
 const shoeRoutes = require('./routes/shoe')
+const brandRoutes = require('./routes/brand')
 
 require('dotenv').config({ path: './config/.env' })
 
@@ -22,8 +22,8 @@ app.use(logger('dev'))
 app.use(methodOverride('_method'))
 
 app.use('/', mainRoutes)
-app.use('/result', resultRoutes)
 app.use('/shoes', shoeRoutes)
+app.use('/brands', brandRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log('Server is running, you better catch it!')

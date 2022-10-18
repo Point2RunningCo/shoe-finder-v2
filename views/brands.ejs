@@ -1,35 +1,34 @@
 <%- include('partials/header') -%>
 
     <main>
-        <h1>Shoe List</h1>
+        <h1>Brand List</h1>
         <table>
             <thead>
                 <tr>
                     <th>Shoe</th>
                     <th>Stability</th>
                     <th>Cushion</th>
-                    <th colspan="2"><a href="/shoes/create">+</a></th>
+                    <th colspan="2"><a href="/brands/create">+</a></th>
                 </tr>
             </thead>
 
             <tbody>
-                <% shoes.forEach( el=> { %>
+                <% brands.forEach( el=> { %>
                     <tr>
                         <td>
-                            <%= el.brand %>
-                                <%= el.name %>
+                            <%= el.name %>
                         </td>
                         <td>
-                            <%= el.stability %>
+                            <%= el.assortment %>
                         </td>
                         <td>
-                            <%= el.cushion %>
+
                         </td>
                         <td>
-                            <a href="/shoes/<%= el._id %>">Edit</a>
+                            <a href="/brands/<%= el._id %>">Edit</a>
                         </td>
                         <td>
-                            <form action="/shoes/delete/<%= el._id %>?_method=DELETE" method="POST">
+                            <form action="/brands/delete/<%= el._id %>?_method=DELETE" method="POST">
                                 <button type="submit">Delete</button>
                             </form>
                         </td>

@@ -1,4 +1,5 @@
 const Shoe = require('../models/Shoe')
+const Brand = require('../models/Brand')
 
 module.exports = {
     getShoes: async (req, res) => {
@@ -11,15 +12,17 @@ module.exports = {
     },
     getShoe: async (req, res) => {
         try {
+            const brandItems = await Brand.find().sort({ name: 1 })
             const shoe = await Shoe.findById(req.params.id)
-            res.render('shoe.ejs', { shoe: shoe })
+            res.render('shoe.ejs', { shoe: shoe, brands: brandItems })
         } catch (err) {
             console.log(err)
         }
     },
     getCreateShoe: async (req, res) => {
         try {
-            res.render('createShoe.ejs')
+            const brandItems = await Brand.find().sort({ name: 1 })
+            res.render('createShoe.ejs', { brands: brandItems })
         } catch (err) {
             console.log(err)
         }
@@ -37,6 +40,8 @@ module.exports = {
                 wImg: req.body.wImg,
                 description: req.body.description
             })
+            await Brand.findOneAndUpdate({ name: req.body.brand }, { $push: { assortment: req.body.name } })
+            console.log(req.body.brand)
             console.log('Shoe has been added!')
             res.redirect('/shoes')
         } catch (err) {
@@ -58,6 +63,7 @@ module.exports = {
                     wImg: req.body.wImg,
                     description: req.body.description
                 })
+            await Brand.findOneAndUpdate({ name: req.body.brand }, { assortment: req.body.name })
             console.log('Shoe has been edited!')
             res.redirect('/shoes')
         } catch (err) {

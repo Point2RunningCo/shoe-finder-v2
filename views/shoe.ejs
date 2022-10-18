@@ -6,7 +6,17 @@
         <input type="text" name="name" required value="<%= shoe.name %>">
 
         <label for="brand">Brand:</label>
-        <input type="text" name="brand" required value="<%= shoe.brand %>">
+        <select id="brand" name="brand" required>
+            <option value="<%= shoe.brand %>">
+                <%= shoe.brand %>
+            </option>
+            <% brands.forEach( el=> { %>
+                <option value="<%= el.name %>">
+                    <%= el.name %>
+                </option>
+                <% }) %>
+        </select>
+
 
         <p>Stability:</p>
         <input type="radio" name="stability" value="Neutral" id="neutral" class="radioBtn">
@@ -30,19 +40,19 @@
         <label for="maxCushion">Max Cushion</label>
 
         <label for="mUrl">Men's URL:</label>
-        <input type="url" name="mUrl" required value="<%= shoe.mUrl %>">
+        <input type="url" name="mUrl" value="<%= shoe.mUrl %>">
 
         <label for="wUrl">Women's mUrl:</label>
-        <input type="url" name="wUrl" required value="<%= shoe.wUrl %>">
+        <input type="url" name="wUrl" value="<%= shoe.wUrl %>">
 
         <label for="mImg">Men's Image:</label>
-        <input type="text" name="mImg" required value="<%= shoe.mImg %>">
+        <input type="text" name="mImg" value="<%= shoe.mImg %>">
 
         <label for="wImg">Women's Image:</label>
-        <input type="text" name="wImg" required value="<%= shoe.wImg %>">
+        <input type="text" name="wImg" value="<%= shoe.wImg %>">
 
         <label for="description">Description:</label>
-        <input type="textarea" name="description" required value="<%= shoe.description %>">
+        <textarea name="description" value="<%= shoe.description %>" cols="30" rows="10"></textarea>
 
         <input class="btn" type="submit">
     </form>
